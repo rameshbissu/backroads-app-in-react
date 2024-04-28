@@ -1,21 +1,12 @@
 import React from "react";
-import { pageLinks, socialLinks } from "../data.js";
+import { socialLinks } from "../data.js";
+import PageLinks from "./PageLinks.js";
 
 const Footer = () => {
   return (
     <footer className="section footer">
-      <ul className="footer-links">
-        {pageLinks.map((link) => {
-          const { id, href, text } = link;
-          return (
-            <li>
-              <a href={href} className="footer-link" key={id}>
-                {text}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <PageLinks parentClass="footer-links" itemClass="footer-link" />
+
       <ul className="footer-icons">
         {socialLinks.map((link) => {
           const { id, href, icon } = link;
